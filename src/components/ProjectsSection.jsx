@@ -1,14 +1,16 @@
 import { ArrowRight, ExternalLink, Github, InfoIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "FALCON🦅", 
+    description: "Fall Alert Landslide Condition Observation Network",
+    image: "/projects/FALCON.png",
+    tags: ["React", "TailwindCSS", "TypeScript", "Firebase", "Python", "FastAPI", "ML"],
+    demoUrl: "http://192.168.1.107:5173/",
+    githubUrl: "https://github.com/SachinVaishnav2980/FALCON",
+    infoUrl: "/falcon",
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const projects = [
     tags: ["TypeScript", "D3.js", "Next.js"],
     demoUrl: "#",
     githubUrl: "#",
+    infoUrl:"",
   },
   {
     id: 3,
@@ -29,6 +32,7 @@ const projects = [
     tags: ["React", "Node.js", "Stripe"],
     demoUrl: "#",
     githubUrl: "#",
+    infoUrl:"",
   },
 ];
 
@@ -89,13 +93,14 @@ export const ProjectsSection = () => {
                     >
                       <Github size={20} />
                     </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                    >
-                      <InfoIcon size={20} />
-                    </a>
+                    {project.infoUrl && (
+                      <Link
+                        to={project.infoUrl}
+                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                      >
+                        <InfoIcon size={20} />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
